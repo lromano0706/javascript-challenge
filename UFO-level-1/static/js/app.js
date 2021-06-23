@@ -30,5 +30,16 @@ function runEnter() {
 
   console.log(filteredData);
 
+// Get a reference to the table body 
+  var tbody = d3.select("tbody");
+
+//itterate through filterData to append into row and cell
+  filteredData.forEach((ufoSighting) => {
+  var row = tbody.append("tr");
+  Object.entries(ufoSighting).forEach(([key, value]) => {
+    var cell = row.append("td");
+    cell.text(value);
+    });
+  });
 
 };
